@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https:; connect-src https://script.google.com https://script.googleusercontent.com https://*.googleusercontent.com; object-src blob:; frame-src blob:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark">
+  <title>Yayasan Thiapin Mandiri — Sistem Keuangan</title>
+  <link rel="stylesheet" href="style.css"><script defer src="config.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+  <a href="#content" class="skip">Lewati ke konten</a>
+  <div id="login" class="login-wrap">
+    <div class="login-layout">
+      <section class="login-brand">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">YTM</span><div><span class="eyebrow">PORTAL INSTITUSI</span><h1 class="floating">Yayasan<br>Thiapin Mandiri</h1></div></div>
+        <div class="login-copy"><span class="pill glass">PENDIDIKAN & TERAPI ANAK</span><h2>Setiap langkah kecil,<br>masa depan yang<br>lebih mandiri.</h2><p>Kelola pendidikan, layanan terapi, dan keuangan yayasan dalam satu ruang kerja yang tertata.</p></div>
+        <figure class="building"><img src="assets/gedung-ytm.jpg" width="474" height="474" alt="Gedung asli Yayasan Thiapin Mandiri berwarna kuning dengan pagar hijau"><figcaption><strong>Yayasan Thiapin Mandiri</strong><span>Ruang untuk tumbuh dan belajar</span></figcaption></figure>
+        <div class="brand-bottom"><span>Pendidikan dengan perhatian.</span><button id="pause-motion" type="button" class="ghost-light" aria-pressed="false">Jeda animasi</button></div>
+      </section>
+      <section class="login-panel">
+        <span class="login-symbol" aria-hidden="true"><i data-lucide="shield-check"></i></span><span class="eyebrow muted">PORTAL KEUANGAN YAYASAN</span>
+        <h2>Selamat datang<br>kembali.</h2><p class="muted">Masuk untuk mengelola keuangan pendidikan dan terapi anak.</p>
+        <form id="login-form">
+          <label>Username<input name="username" autocomplete="username" required minlength="3" placeholder="Masukkan username Anda"></label>
+          <label>Password<span class="password-wrap"><input name="password" id="login-password" type="password" autocomplete="current-password" required maxlength="128" placeholder="Masukkan password"><button id="toggle-password" type="button" class="icon-button" aria-label="Tampilkan password"><i data-lucide="eye"></i></button></span></label>
+          <p id="login-error" class="error-message" role="alert"></p><button class="primary wide" type="submit">Masuk ke Sistem <i data-lucide="arrow-right"></i></button>
+        </form>
+        <div class="login-info"><i data-lucide="lock-keyhole"></i><p>Akses khusus admin dan superadmin. Hubungi pengelola yayasan untuk mendapatkan akun.</p></div>
+        <p id="config-note" class="notice" hidden>Backend belum dihubungkan. Isi URL deployment GAS pada config.js, lalu muat ulang.</p>
+        <footer>© <span id="year"></span> Yayasan Thiapin Mandiri<br><span class="muted">Sistem Keuangan Pendidikan & Terapi</span></footer>
+      </section>
+    </div>
+  </div>
+  <div id="shell" hidden>
+    <button id="nav-scrim" class="nav-scrim" aria-label="Tutup menu" hidden></button>
+    <aside id="sidebar" class="sidebar"><div class="brand sidebar-brand"><span class="brand-mark">YTM</span><div><strong>Thiapin Mandiri</strong><small>Sistem Keuangan Yayasan</small></div></div><nav id="navigation" aria-label="Menu utama"></nav><div class="sidebar-footer"><span class="connection-dot"></span><span id="connection">REST API Google Apps Script</span></div></aside>
+    <div class="main-shell"><header class="topbar"><div class="topbar-left"><button id="toggle-nav" type="button" class="icon-button mobile-only" aria-label="Buka menu"><i data-lucide="menu"></i></button><span id="breadcrumb">Dashboard</span><span class="pill subtle" id="period-chip"></span></div><div class="topbar-right"><span id="identity"></span><button id="account" class="icon-button" type="button" aria-label="Ganti password"><i data-lucide="key-round"></i></button><button id="logout" class="secondary" type="button"><i data-lucide="log-out"></i><span>Keluar</span></button></div></header>
+    <main id="content" tabindex="-1"></main><footer class="app-footer">Yayasan Thiapin Mandiri <span>Keuangan berbasis kas · <span id="sync-state">Siap</span></span></footer></div>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <dialog id="modal"><div class="modal-header"><h2 id="modal-title"></h2><button type="button" id="modal-close" class="icon-button" aria-label="Tutup dialog"><i data-lucide="x"></i></button></div><div id="modal-body"></div></dialog>
+</body></html>
